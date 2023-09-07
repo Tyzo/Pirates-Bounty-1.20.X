@@ -10,7 +10,7 @@ import net.tyzo.piratesbounty.item.ModItems;
 public class ModModelPredicateProvider {
 	public static void registerModModels() {
 		registerMusket(ModItems.FLINTLOCK_MUSKET);
-		registerMusket(ModItems.MUSKET);
+//		registerMusket(ModItems.MUSKET);
 	}
 
 	private static void registerMusket(Item musket) {

@@ -92,7 +92,7 @@ public class MusketBallEntity extends PersistentProjectileEntity {
 		boolean hurt = hitEntity.damage(this.getDamageSources().mobProjectile(this, livingentity), damage);
 		if (hurt) {
 			if(hitEntity instanceof LivingEntity livingHitEntity) {
-				livingHitEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1), owner);
+				//livingHitEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1), owner);
 			}
 		}
 	}

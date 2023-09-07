@@ -1,0 +1,11 @@
+{
+  "shoot_1": {
+    "subtitle": "sounds.piratesbounty.shoot_1",
+    "sounds": [
+      "piratesbounty:shoot_1",
+      "piratesbounty:shoot_2",
+      "piratesbounty:shoot_3",
+      "piratesbounty:shoot_4"
+    ]
+  }
+}

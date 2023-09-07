@@ -1,0 +1,65 @@
+{
+    "parent": "piratesbounty:item/flintlock_musket_idle",
+    "overrides": [
+        {
+            "predicate": {
+                "pulling": 0
+            },
+            "model": "piratesbounty:item/flintlock_musket_idle"
+        },
+        {
+            "predicate": {
+                "pulling": 1
+            },
+            "model": "piratesbounty:item/flintlock_musket_loading_0"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.167
+            },
+            "model": "piratesbounty:item/flintlock_musket_loading_1"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.5
+            },
+            "model": "piratesbounty:item/flintlock_musket_loading_2"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.7
+            },
+            "model": "piratesbounty:item/flintlock_musket_loading_3"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.8
+            },
+            "model": "piratesbounty:item/flintlock_musket_loading_4"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 1.0
+            },
+            "model": "piratesbounty:item/flintlock_musket_loading_5"
+        },
+        {
+            "predicate": {
+                "charged": 1
+            },
+            "model": "piratesbounty:item/flintlock_musket_primed"
+        },
+        {
+            "predicate": {
+                "charged": 1,
+                "firework": 1
+            },
+            "model": "piratesbounty:item/flintlock_musket_firework"
+        }
+    ]
+}

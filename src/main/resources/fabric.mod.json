@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "piratesbounty",
+	"version": "${version}",
+	"name": "Pirates Bounty Mod",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Tyzo"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/piratesbounty/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.tyzo.piratesbounty.PiratesBountyMod"
+		],
+		"fabric-datagen": [
+			"net.tyzo.piratesbounty.PiratesBountyModDataGenerator"
+		],
+		"client": [
+			"net.tyzo.piratesbounty.PiratesBountyModClient"
+		]
+	},
+	"mixins": [
+		"piratesbounty.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

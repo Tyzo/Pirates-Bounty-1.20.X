@@ -13,10 +13,9 @@ public class ModItemGroup {
 	public static final ItemGroup PIRATE_GROUP = Registry.register(Registries.ITEM_GROUP,
 			new Identifier(PiratesBountyMod.MOD_ID, "pirate_group"),
 			FabricItemGroup.builder().displayName(Text.translatable("itemgroup_pirate_group"))
-					.icon(() -> new ItemStack(ModItems.MUSKET_BALL)).entries((displayContext, entries) -> {
-
-						entries.add(ModItems.MUSKET_BALL);
-						entries.add(ModItems.MUSKET);
+					.icon(() -> new ItemStack(ModItems.FLINTLOCK_MUSKET)).entries((displayContext, entries) -> {
+//						entries.add(ModItems.MUSKET_BALL);
+//						entries.add(ModItems.MUSKET);
 						entries.add(ModItems.FLINTLOCK_MUSKET);
 
 

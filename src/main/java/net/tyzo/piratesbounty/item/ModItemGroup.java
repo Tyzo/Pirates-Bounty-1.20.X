@@ -15,11 +15,8 @@ public class ModItemGroup {
 			FabricItemGroup.builder().displayName(Text.translatable("itemgroup_pirate_group"))
 					.icon(() -> new ItemStack(ModItems.FLINTLOCK_MUSKET)).entries((displayContext, entries) -> {
 						entries.add(ModItems.MUSKET_BALL);
-						entries.add(ModItems.MUSKET);
 						entries.add(ModItems.FLINTLOCK_MUSKET);
-
-
-
+						entries.add(ModItems.PIRATE_HAT);
 
 					}).build());
 

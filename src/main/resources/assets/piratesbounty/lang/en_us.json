@@ -1,6 +1,7 @@
 {
   "item.piratesbounty.musket_ball": "Musket Ball",
-  "item.piratesbounty.musket": "Musket",
+  "item.piratesbounty.flintlock_musket": "Flintlock Musket",
+  "item.piratesbounty.pirate_hat": "Leather Pirate Hat",
   "itemgroup_pirate_group": "Pirate's Bounty",
   "sounds.piratesbounty.shoot_1": "Musket Fired"
 }

@@ -8,8 +8,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
@@ -92,7 +90,7 @@ public class MusketBallEntity extends PersistentProjectileEntity {
 		boolean hurt = hitEntity.damage(this.getDamageSources().mobProjectile(this, livingentity), damage);
 		if (hurt) {
 			if(hitEntity instanceof LivingEntity livingHitEntity) {
-				//livingHitEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1), owner);
+//				livingHitEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 100, 1), owner);
 			}
 		}
 	}

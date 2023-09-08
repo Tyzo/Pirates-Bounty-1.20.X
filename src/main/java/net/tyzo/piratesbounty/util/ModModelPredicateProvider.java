@@ -10,7 +10,6 @@ import net.tyzo.piratesbounty.item.ModItems;
 public class ModModelPredicateProvider {
 	public static void registerModModels() {
 		registerFlintlockMusket(ModItems.FLINTLOCK_MUSKET);
-		registerMusket(ModItems.MUSKET);
 	}
 
 	private static void registerFlintlockMusket(Item flintlockmusket) {
@@ -26,18 +25,5 @@ public class ModModelPredicateProvider {
 		ModelPredicateProviderRegistry.register(flintlockmusket, new Identifier("pulling"), (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack && !CrossbowItem.isCharged(stack) ? 1.0f : 0.0f);
 		ModelPredicateProviderRegistry.register(flintlockmusket, new Identifier("charged"), (stack, world, entity, seed) -> CrossbowItem.isCharged(stack) ? 1.0f : 0.0f);
 		ModelPredicateProviderRegistry.register(flintlockmusket, new Identifier("firework"), (stack, world, entity, seed) -> CrossbowItem.isCharged(stack) && CrossbowItem.hasProjectile(stack, Items.FIREWORK_ROCKET) ? 1.0f : 0.0f);
-	}
-
-	private static void registerMusket(Item musket) {
-		ModelPredicateProviderRegistry.register(musket, new Identifier("pull"), (stack, world, entity, seed) -> {
-			if (entity == null) {
-				return 0.0f;
-			}
-			if (entity.getActiveItem() != stack) {
-				return 0.0f;
-			}
-			return (float) (stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 20.0f;
-		});
-		ModelPredicateProviderRegistry.register(musket, new Identifier("pulling"), (stack, world, entity, seed) -> entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0f : 0.0f);
 	}
 }

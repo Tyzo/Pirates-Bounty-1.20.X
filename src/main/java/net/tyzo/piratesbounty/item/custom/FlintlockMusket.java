@@ -26,6 +26,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.tyzo.piratesbounty.entity.custom.MusketBallEntity;
+import net.tyzo.piratesbounty.item.ModItems;
 import net.tyzo.piratesbounty.sound.ModSounds;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
@@ -103,7 +104,7 @@ public class FlintlockMusket extends RangedWeaponItem implements Vanishable {
 				itemStack = itemStack2.copy();
 			}
 			if (itemStack.isEmpty() && bl) {
-				itemStack = new ItemStack(Items.ARROW);
+				itemStack = new ItemStack(ModItems.MUSKET_BALL);
 				itemStack2 = itemStack.copy();
 			}
 			if (FlintlockMusket.loadProjectile(shooter, musket, itemStack, k > 0, bl)) continue;

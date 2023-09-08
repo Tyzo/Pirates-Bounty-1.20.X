@@ -28,8 +28,6 @@ public class MusketItem extends Item {
 			world.spawnEntity(musketProjectile);
 		}
 
-
-
 		user.incrementStat(Stats.USED.getOrCreateStat(this));
 		if (!user.getAbilities().creativeMode) {
 			itemstack.damage(1, user, p -> p.sendToolBreakStatus(hand));

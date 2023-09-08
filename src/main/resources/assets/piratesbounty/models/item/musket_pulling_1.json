@@ -1,0 +1,6 @@
+{
+  "parent": "piratesbounty:item/musket",
+  "textures": {
+    "layer0": "piratesbounty:item/musket_pulling_1"
+  }
+}

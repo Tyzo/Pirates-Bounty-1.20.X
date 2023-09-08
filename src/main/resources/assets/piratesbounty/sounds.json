@@ -7,5 +7,41 @@
       "piratesbounty:shoot_3",
       "piratesbounty:shoot_4"
     ]
+  },
+  "musket_quick_charge_1": {
+    "subtitle": "sounds.piratesbounty.musket_quick_charge_1",
+    "sounds": [
+      "piratesbounty:musket_quick_charge_1"
+    ]
+  },
+  "musket_quick_charge_2": {
+    "subtitle": "sounds.piratesbounty.musket_quick_charge_2",
+    "sounds": [
+      "piratesbounty:musket_quick_charge_2"
+    ]
+  },
+  "musket_quick_charge_3": {
+    "subtitle": "sounds.piratesbounty.musket_quick_charge_3",
+    "sounds": [
+      "piratesbounty:musket_quick_charge_3"
+    ]
+  },
+  "musket_loading_start": {
+    "subtitle": "sounds.piratesbounty.musket_loading_start",
+    "sounds": [
+      "piratesbounty:musket_loading_start"
+    ]
+  },
+  "musket_loading_middle": {
+    "subtitle": "sounds.piratesbounty.musket_loading_middle",
+    "sounds": [
+      "piratesbounty:musket_loading_middle"
+    ]
+  },
+  "musket_loading_end": {
+    "subtitle": "sounds.piratesbounty.musket_loading_end",
+    "sounds": [
+      "piratesbounty:musket_loading_end"
+    ]
   }
 }

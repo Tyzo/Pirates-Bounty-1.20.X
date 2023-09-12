@@ -53,13 +53,6 @@
                 "charged": 1
             },
             "model": "piratesbounty:item/flintlock_musket_primed"
-        },
-        {
-            "predicate": {
-                "charged": 1,
-                "firework": 1
-            },
-            "model": "piratesbounty:item/flintlock_musket_firework"
         }
     ]
 }

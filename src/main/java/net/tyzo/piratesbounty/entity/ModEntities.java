@@ -14,9 +14,10 @@ public class ModEntities {
 	public static final EntityType<MusketBallEntity> MUSKET_BALL_PROJECTILE = Registry.register(Registries.ENTITY_TYPE,
 			new Identifier(PiratesBountyMod.MOD_ID, "musket_ball_projectile"),
 			FabricEntityTypeBuilder.<MusketBallEntity>create(SpawnGroup.MISC, MusketBallEntity::new)
-					.dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
+					.dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build());
 
 	public static void registerModEntities() {
 		PiratesBountyMod.LOGGER.info("Registering Mod Entities for " + PiratesBountyMod.MOD_ID);
 	}
+
 }

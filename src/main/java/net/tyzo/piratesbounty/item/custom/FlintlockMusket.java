@@ -2,6 +2,9 @@ package net.tyzo.piratesbounty.item.custom;
 
 import com.google.common.collect.Lists;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.block.BlockState;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.CrossbowUser;
@@ -19,15 +22,19 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.tyzo.piratesbounty.entity.custom.MusketBallEntity;
 import net.tyzo.piratesbounty.item.ModItems;
 import net.tyzo.piratesbounty.sound.ModSounds;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
@@ -36,11 +43,11 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class FlintlockMusket extends RangedWeaponItem implements Vanishable {
-		private static final String CHARGED_KEY = "Charged";
-		private static final String CHARGED_PROJECTILES_KEY = "ChargedProjectiles";
-		private boolean charged = false;
-		private boolean loaded = false;
-		
+	private static final String CHARGED_KEY = "Charged";
+	private static final String CHARGED_PROJECTILES_KEY = "ChargedProjectiles";
+	private boolean charged = false;
+	private boolean loaded = false;
+
 	public FlintlockMusket(Settings settings) {
 		super(settings);
 	}
@@ -62,11 +69,13 @@ public class FlintlockMusket extends RangedWeaponItem implements Vanishable {
 		if (FlintlockMusket.isCharged(itemStack)) {
 			world.playSound(null, user.getX(), user.getY(), user.getZ(), ModSounds.SHOOT_1, SoundCategory.NEUTRAL, 1.0F, 1F);
 
-			if (!world.isClient()) {
-				MusketBallEntity musketProjectile = new MusketBallEntity(world, user);
-				musketProjectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 4.75F, 0.0F);
-				world.spawnEntity(musketProjectile);
-			}
+            if (!world.isClient()) {
+                MusketBallEntity musketProjectile = new MusketBallEntity(world, user);
+                musketProjectile.setPosition(user.getX(), user.getEyeY(), user.getZ());
+                musketProjectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 20, 0);
+                musketProjectile.setOwner(user);
+                world.spawnEntity(musketProjectile);
+                }
 
 			FlintlockMusket.setCharged(itemStack, false);
 			return TypedActionResult.consume(itemStack);
@@ -286,6 +295,22 @@ public class FlintlockMusket extends RangedWeaponItem implements Vanishable {
 		}
 	}
 
+
+	@Override
+	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
+	{
+		if (Screen.hasShiftDown())
+		{
+			tooltip.add(Text.translatable("Ammo Type: Musketball").formatted(Formatting.GRAY));
+		}
+		else
+		{
+			tooltip.add(Text.translatable("Press Shift to see stats").formatted(Formatting.AQUA));
+		}
+		super.appendTooltip(stack, world, tooltip, context);
+	}
+
+
 	@Override
 	public int getMaxUseTime(ItemStack stack) {
 		return FlintlockMusket.getPullTime(stack) + 3;
@@ -329,8 +354,21 @@ public class FlintlockMusket extends RangedWeaponItem implements Vanishable {
 		return stack.isOf(this);
 	}
 
+
+	@Override
+	public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner)
+	{
+		return false;
+	}
+
+	@Override
+	public boolean isEnchantable(ItemStack stack)
+	{
+		return false;
+	}
+
 	@Override
 	public int getRange() {
-		return 32;
+		return 0;
 	}
 }
